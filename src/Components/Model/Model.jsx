@@ -7,7 +7,7 @@ const Model = ({ model }) => {
     setIsSubscribed(true);
   };
 
-  console.log(model);
+  // console.log(model);
   return (
     <div className="rounded-xl border border-zinc-400 overflow-hidden">
       <div className="h-56 flex justify-center items-center bg-zinc-200 ">
