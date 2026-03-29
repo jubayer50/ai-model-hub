@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import Banner from "./Components/Banner/Banner";
-import Cart from "./Components/Cart/Cart";
+import Carts from "./Components/Carts/Carts";
 import Footer from "./Components/Footer/Footer";
 import Models from "./Components/Models/Models";
 import NavBar from "./Components/NavBar/NavBar";
@@ -16,7 +16,9 @@ const modelsPromise = getModel();
 
 function App() {
   const [activeTab, setActiveTab] = useState("models");
+  const [carts, setCarts] = useState([]);
   // console.log(activeTab);
+  // console.log(carts);
 
   return (
     <>
@@ -27,10 +29,14 @@ function App() {
       <Tabs setActiveTab={setActiveTab}></Tabs>
 
       {activeTab === "models" ? (
-        <Models modelsPromise={modelsPromise}></Models>
+        <Models
+          modelsPromise={modelsPromise}
+          carts={carts}
+          setCarts={setCarts}
+        ></Models>
       ) : null}
 
-      {activeTab === "cart" ? <Cart></Cart> : null}
+      {activeTab === "cart" ? <Carts carts={carts}></Carts> : null}
 
       <Footer></Footer>
     </>

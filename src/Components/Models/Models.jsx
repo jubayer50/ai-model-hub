@@ -1,7 +1,7 @@
 import React, { use } from "react";
 import Model from "../Model/Model";
 
-const Models = ({ modelsPromise }) => {
+const Models = ({ modelsPromise, carts, setCarts }) => {
   const models = use(modelsPromise);
   return (
     <div className="my-20">
@@ -14,7 +14,12 @@ const Models = ({ modelsPromise }) => {
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 container mx-auto mt-10">
         {models.map((model) => (
-          <Model key={model.id} model={model}></Model>
+          <Model
+            key={model.id}
+            model={model}
+            carts={carts}
+            setCarts={setCarts}
+          ></Model>
         ))}
       </div>
     </div>

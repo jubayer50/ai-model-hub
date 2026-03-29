@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 
-const Model = ({ model }) => {
+const Model = ({ model, carts, setCarts }) => {
   const [isSubscribed, setIsSubscribed] = useState(false);
 
   const handleSubscribed = () => {
     setIsSubscribed(true);
+    setCarts([...carts, model]);
   };
 
   // console.log(model);
